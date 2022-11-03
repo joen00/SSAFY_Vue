@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>도서관리</title>
+    <link rel="stylesheet" href="./css/main.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+      [v-cloak]::before {
+        content: "삭제중...";
+      }
+      [v-cloak] > * {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div class="header">
+        <a href="index.html"> <img src="./img/ssafy_logo.png" id="ssafy_logo" /></a>
+        <p class="logo">SSAFY 도서 삭제</p>
+      </div>
+      <div id="delete">
+        <h1 class="underline">SSAFY 도서 삭제</h1>
+        <div v-cloak>
+          <h1>{{msg}}</h1>
+        </div>
+      </div>
+    </div>
+    <script>
+      setTimeout(function () {
+        new Vue({
+          el: "#delete",
+          data: {
+            msg: "삭제완료",
+          },
+        });
+      }, 3000);
+    </script>
+  </body>
+</html>

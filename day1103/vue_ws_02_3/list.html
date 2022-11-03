@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>도서관리</title>
+    <link rel="stylesheet" href="./css/main.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div class="header">
+        <a href="index.html"> <img src="./img/ssafy_logo.png" id="ssafy_logo" /></a>
+        <p class="logo">도서목록</p>
+      </div>
+      <button v-on:click="btn_register">등록</button>
+      <div class="list">
+        <table>
+          <tr>
+            <th>번호</th>
+            <th>ISBN</th>
+            <th>제목</th>
+            <th>저자</th>
+            <th>가격</th>
+          </tr>
+          <tr v-for="(book, index) in books">
+            <td>{{index + 1}}</td>
+            <td>{{book.isbn}}</td>
+            <td><a :href="linkview">{{book.title}}</a></td>
+            <td>{{book.author}}</td>
+            <td>{{book.isbn}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <script>
+      new Vue({
+        el: "#app",
+        name: "list",
+        data() {
+          return {
+            linkview: "./view.html",
+            books: [
+              {
+                isbn: "111-222-7777",
+                title: "스프링 재미있나요?",
+                author: "안효인",
+                price: "35,000원",
+                content: "",
+              },
+              {
+                isbn: "111-333-1234",
+                title: "자바 프르그래밍",
+                author: "최싸피",
+                price: "28,000원",
+                content: "",
+              },
+              {
+                isbn: "111-222-7778",
+                title: "VUEJS 정복하기",
+                author: "김싸피",
+                price: "18,000원",
+                content: "",
+              },
+              {
+                isbn: "111-222-7779",
+                title: "알고리즘 어렵지 않아요~",
+                author: "안효인",
+                price: "25,000원",
+                content: "",
+              },
+            ],
+          };
+        },
+        methods: {
+          btn_register() {
+            location.href = "./create.html";
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

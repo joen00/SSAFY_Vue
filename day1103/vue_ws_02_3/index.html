@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>도서관리</title>
+    <link rel="stylesheet" href="./css/main.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div class="header">
+        <a href="index.html"> <img src="./img/ssafy_logo.png" id="ssafy_logo" /></a>
+        <p class="logo">도서관리</p>
+      </div>
+      <div>
+        <ul>
+          <li><a :href="linkregister">도서 등록</a></li>
+          <li><a :href="linklist">도서 목록</a></ul>
+        </ul>
+      </div>
+    </div>
+    <script>
+      new Vue({
+        el: "#app",
+        name: "create",
+        data() {
+          return {
+            linkregister: "./create.html",
+            linklist: "./list.html",
+          };
+        },
+      });
+    </script>
+  </body>
+</html>
