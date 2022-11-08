@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="./css/main.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <header-nav></header-nav>
+      <!-- 이 컴포넌트가 화면에 보여주는 위치 -->
+      <book-main></book-main>
+    </div>
+    <script type="module">
+      //  외부 타입을 가져다 쓴다라는 것이다.
+      // 다른 파일에서 이 파일을 가져다가 쓰고 싶을때
+      import HeaderNav from "./components/HeaderNav.js";
+      import BookMain from "./components/BookMain.js";
+      new Vue({
+        el: "#app",
+        components: {
+          HeaderNav, // 현재 인스턴스의 조각 컴포넌트
+          BookMain,
+        },
+      });
+    </script>
+  </body>
+</html>
